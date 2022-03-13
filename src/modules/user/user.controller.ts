@@ -1,5 +1,4 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import { server } from "../../app";
 import { verifyPassword } from "../../utils/hash";
 import { CreateUserInput, LoginInput } from "./user.schema";
 import { createUser, findUserByEmail, findUsers } from "./user.service";
@@ -49,7 +48,7 @@ export async function loginHandler(
   if (correctPassword) {
     const { password, salt, ...rest } = user;
     // generate access token
-    return { accessToken: server.jwt.sign(rest) };
+    return { accessToken: request.jwt.sign(rest) };
   }
 
   return reply.code(401).send({
