@@ -1,5 +1,7 @@
 # Build a REST API with Fastify & Prisma
 
+Video: https://youtu.be/LMoMHP44-xM
+
 ## What are we using?
 * Fastify - Web server
 * Prisma - Database ORM
